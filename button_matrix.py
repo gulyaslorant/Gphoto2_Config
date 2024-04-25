@@ -34,7 +34,7 @@ class ButtonMatrix():
         # Erhalte die Button Nummer
         btnIndex = self.buttonIDs[rowPin][colPin]
         if btnIndex == 1:
-            subprocess.run(["gphoto2", "--cameras-list"])
+            subprocess.run(["gphoto2", "--list-cameras"])
         if btnIndex == 2:
             subprocess.run(["gphoto2", "--auto-detect"])
         if btnIndex == 3:
@@ -42,25 +42,25 @@ class ButtonMatrix():
         if btnIndex == 4:
             subprocess.run(["gphoto2", "--config-list"])
         if btnIndex == 5:
-            subprocess.run(["gphoto2", "--set config shutterspeed=1/60"])
+            subprocess.run(["gphoto2", "--set-config", "shutterspeed=1/60"])
         if btnIndex == 6:
-            subprocess.run(["gphoto2", "--set config shutterspeed=1/125"])
+            subprocess.run(["gphoto2", "--set-config", "shutterspeed=1/125"])
         if btnIndex == 7:
-            subprocess.run(["gphoto2", "--set config shutterspeed=1/500"])
+            subprocess.run(["gphoto2", "--set-config", "shutterspeed=1/500"])
         if btnIndex == 8:
-            subprocess.run(["gphoto2", "--set config shutterspeed=1/1000"])
+            subprocess.run(["gphoto2", "--set-config", "shutterspeed=1/1000"])
         if btnIndex == 9:
-            subprocess.run(["gphoto2", "--set config iso=200"])
+            subprocess.run(["gphoto2", "--set-config", "iso=200"])
         if btnIndex == 10:
-            subprocess.run(["gphoto2", "--set config iso=400"])
+            subprocess.run(["gphoto2", "--set-config", "iso=400"])
         if btnIndex == 11:
-            subprocess.run(["gphoto2", "--set config iso=1250"])
+            subprocess.run(["gphoto2", "--set-config", "iso=1250"])
         if btnIndex == 12:
-            subprocess.run(["gphoto2", "--set config iso=3200"])
+            subprocess.run(["gphoto2", "--set-config", "iso=3200"])
         if btnIndex == 13:
             subprocess.run(["gphoto2", "--capture-image"])
-        if btnIndex == 14:
-            subprocess.run(["gphoto2", "--capture-image-and-download --filename="~/Pictures/Bild001.%C"])
+        #if btnIndex == 14:
+        #    subprocess.run(["gphoto2", "--capture-image-and-download --filename="~/Pictures/Bild001.%C"])
         if btnIndex == 15:
             subprocess.run(["gphoto2", "--capture-image"])
         if btnIndex == 16:
