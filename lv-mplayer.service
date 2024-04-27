@@ -1,0 +1,12 @@
+# /lib/systemd/system/mygphoto.service
+[Unit]
+Description=gphoto2 live view service
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/sudo /bin/bash -lc 'gphoto2 --capture-movie --stdout | mplayer -cache 128 -'
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

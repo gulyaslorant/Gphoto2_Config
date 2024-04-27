@@ -38,7 +38,7 @@ class ButtonMatrix():
         if btnIndex == 2:
             subprocess.run(["gphoto2", "--auto-detect"])
         if btnIndex == 3:
-            subprocess.run(["gphoto2", "--capture-movie --stdout | mplayer -cache 128 -"])
+            subprocess.run(["gphoto2", "--capture-movie --stdout", "|", "mplayer", "-cache 128", "-"])
         if btnIndex == 4:
             subprocess.run(["gphoto2", "--config-list"])
         if btnIndex == 5:
@@ -64,7 +64,7 @@ class ButtonMatrix():
         if btnIndex == 15:
             subprocess.run(["gphoto2", "--capture-image"])
         if btnIndex == 16:
-            subprocess.run(["gphoto2", "--capture-image"])
+            subprocess.run(["gphoto2", "--list-files"])
         # Verhindert mehrere Knopfdrücke in zu kurzer zeit
         time.sleep(.3)
 
