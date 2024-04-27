@@ -1,6 +1,6 @@
 # Konfigurationsdateien für Gphoto2
 
-##Folgende Dateien sind im Paket enthalten
+## Folgende Dateien sind im Paket enthalten
 
 - liveview.service
 - liveview.sh
@@ -9,9 +9,7 @@ liveview Service ist die Servicedatei, welche in den Service Ordner kopiert werd
 
 hierzu folgenden Befehl ausführen:
 
-´´´
-cp liveview.service /etc/systemd/system/liveview.service
-´´´
+`cp liveview.service /etc/systemd/system/liveview.service`
 
 ## Folgende Dateien sind auf den Joy-Pi abgestimmt
 
