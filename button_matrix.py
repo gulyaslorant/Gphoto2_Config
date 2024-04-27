@@ -6,6 +6,7 @@
 import RPi.GPIO as GPIO
 import time
 import subprocess
+import os
 
 
 class ButtonMatrix():
@@ -38,7 +39,10 @@ class ButtonMatrix():
         if btnIndex == 2:
             subprocess.run(["gphoto2", "--auto-detect"])
         if btnIndex == 3:
-            subprocess.run(["gphoto2", "--capture-movie --stdout", "|", "mplayer", "-cache 128", "-"])
+            if os.system('systemctl is-active --quiet liveview') == 0:
+                subprocess.run(["systemctl","stop", "liveview"])
+            else:
+                subprocess.run(["systemctl","start", "liveview"])
         if btnIndex == 4:
             subprocess.run(["gphoto2", "--config-list"])
         if btnIndex == 5:
