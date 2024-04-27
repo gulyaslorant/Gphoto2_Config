@@ -5,7 +5,7 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/sudo /bin/bash -lc 'gphoto2 --capture-movie --stdout | mplayer -cache 128 -'
+ExecStart=/usr/bin/sudo /bin/bash -lc 'liveView.sh'
 Restart=on-abort
 
 [Install]
