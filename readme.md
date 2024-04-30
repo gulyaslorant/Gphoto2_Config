@@ -2,8 +2,21 @@
 
 ## Folgende Dateien sind im Paket enthalten
 
+- install.sh
 - liveview.service
 - liveview.sh
+
+## Initialisierung aller Services
+
+Hierzu muss die Intall.sh Datei mit +x Rechten genehmigt werden, um ausgeführt werden zu können.
+
+Hierzu folgenden Befehl in dem Gphoto2_config Ordner ausführen
+
+`sudo chmod +x install.sh`
+
+Danach das Script ausführen, um die notwendigen Tools zu installieren, das bedeutet Gphot2 sowie die notwendigen Libs. Zusätzlich werden die Services angelegt, und eingerichtet, dass sie mit dem Hochfahren starten
+
+## Liveview Einstellungen
 
 liveview Service ist die Servicedatei, welche in den Service Ordner kopiert werden muss
 
