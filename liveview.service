@@ -1,12 +1,15 @@
-# /lib/systemd/system/mygphoto.service
+# /lib/systemd/system/liveview.service
+
 [Unit]
-Description=gphoto2 live view service
-After=multi-user.target
+Description=Live View Service for gPhoto2
+After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/sudo /bin/bash -lc '~/Gphoto2/liveView.sh'
-Restart=on-abort
+User=pi
+ExecStart=/home/pi/Gphoto2_Config/liveView.sh
+Restart=on-failure
+RestartSec=10s
 
 [Install]
 WantedBy=multi-user.target

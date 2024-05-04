@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# Installieren von den Notwendigen Softwaretools
-sudo apt install -y gphoto2 libgphoto2*
-
-# Einrichten der Services
+# Update der Servicedatei & Befehlskürzel
 sudo cp liveview.service /usr/lib/systemd/system/liveview.service
 # sudo systemctl enable liveview.service
 sudo systemctl daemon-reload
