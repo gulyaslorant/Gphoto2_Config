@@ -2,12 +2,10 @@
 
 sudo cp motion.service /etc/systemd/system/motion.service
 sudo chmod 644 /etc/systemd/system/motion.service
-
 sudo cp liveview.service /etc/ystemd/system/liveview.service
 sudo chmod 644 /etc/systemd/system/liveview.service
-
-sudo cp bewegung.service /etc/systemd/system/bewegung.service
-sudo chmod 644 /etc/systemd/system/bewegung.service
+sudo cp bewegung.service /etc/systemd/system/matrix.service
+sudo chmod 644 /etc/systemd/system/matrix.service
 #Skripte
 sudo cp bewegung.py /etc/gphoto2/bewegung.py
 

@@ -1,0 +1,15 @@
+# /lib/systemd/system/liveview.service
+
+[Unit]
+Description=Live View Service for gPhoto2
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart = /usr/bin/python3 /etc/gphoto2/tasten.py
+ExecReload = /usr/bin/python3 /etc/gphoto2/tasten.py
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
