@@ -6,8 +6,8 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart = /usr/bin/python3 /etc/gphoto2/motion.py
-ExecReload = /usr/bin/python3 /etc/gphoto2/motion.py
+ExecStart = /usr/bin/python3 /etc/gphoto2/bewegung.py
+ExecReload = /usr/bin/python3 /etc/gphoto2/bewegung.py
 Restart=on-failure
 RestartSec=10s
 
