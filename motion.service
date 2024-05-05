@@ -5,9 +5,9 @@ Description=Live View Service for gPhoto2
 After=network.target
 
 [Service]
-Type=oneshot
-ExecStart = /etc/gphoto2/liveView.sh
-ExecReload = /etc/gphoto2/liveView.sh
+Type=simple
+ExecStart = /usr/bin/python3 /etc/gphoto2/motion.py
+ExecReload = /usr/bin/python3 /etc/gphoto2/motion.py
 Restart=on-failure
 RestartSec=10s
 

@@ -1,7 +1,4 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*-
-# Author : original author stenobot
-# Original Author Github: https://github.com/stenobot/SoundMatrixPi
 
 import RPi.GPIO as GPIO
 import time
