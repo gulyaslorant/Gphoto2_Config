@@ -63,7 +63,7 @@ class ButtonMatrix():
         #if btnIndex == 14:
         #    subprocess.run(["gphoto2", "--capture-image-and-download --filename="~/Pictures/Bild001.%C"])
         if btnIndex == 15:
-            subprocess.run(["gphoto2", "--capture-image"])
+            subprocess.run(["gphoto2", "--capture-image-and-donwload"])
         if btnIndex == 16:
             subprocess.run(["gphoto2", "--list-files"])
         # Verhindert mehrere Knopfdrücke in zu kurzer zeit
