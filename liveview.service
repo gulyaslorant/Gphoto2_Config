@@ -4,8 +4,8 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/bin/sh -c 'gphoto2 --capture-movie --stdout | mplayer -cache 128 -'
-ExecReload=/bin/sh -c 'gphoto2 --capture-movie --stdout | mplayer -cache 128 -'
+ExecStart=/bin/sh -c 'gphoto2 --capture-movie --stdout | mplayer -'
+ExecReload=/bin/sh -c 'gphoto2 --capture-movie --stdout | mplayer -'
 Restart=on-failure
 RestartSec=10s
 
