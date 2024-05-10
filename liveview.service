@@ -1,12 +1,13 @@
 [Unit]
 Description=Capture Movie Stream and Play with MPlayer
-After=network.target
+After=multi-user.target
 
 [Service]
 Type=simple
 ExecStart=/bin/sh -c 'gphoto2 --capture-movie --stdout | mplayer -cache 128 -'
-User=pi
+ExecReload=/bin/sh -c 'gphoto2 --capture-movie --stdout | mplayer -cache 128 -'
 Restart=on-failure
+RestartSec=10s
 
 [Install]
 WantedBy=multi-user.target
