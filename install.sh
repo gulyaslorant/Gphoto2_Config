@@ -28,3 +28,11 @@ sudo systemctl start liveview.service
 
 echo "lvstop='systemctl stop liveview.service'" >> ../.bashrc
 echo "lvstart='systemctl start liveview.service'" >> ../.bashrc
+
+Mai 10 16:20:05 raspberrypi sh[1588]: FATAL: Cannot initialize video driver.
+Mai 10 16:20:05 raspberrypi sh[1588]: Movie-Aspect is undefined - no prescaling applied.
+Mai 10 16:20:05 raspberrypi sh[1588]: VO: [gl_nosw] 1024x768 => 1024x768 Planar 422P
+Mai 10 16:20:05 raspberrypi sh[1588]: SDL SetVideoMode failed: No video mode large enough for 1024x768
+Mai 10 16:20:05 raspberrypi sh[1588]: FATAL: Cannot initialize video driver.
+Mai 10 16:20:05 raspberrypi sh[1588]: Too many buffered pts
+Mai 10 16:20:05 raspberrypi sh[1588]: FATAL: Could not initialize video filters (-vf) or video output (-vo).
