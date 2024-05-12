@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Installieren von den Notwendigen Softwaretools
-sudo apt install -y gphoto2 libgphoto2*
+sudo apt update
+sudo apt install -y gphoto2 libgphoto2* python3
+sudo apt-get -y install python3-rpi.gpio
 
 # Kopieren aller Sckripts und Services in die korrekten Ordner
 #Services
