@@ -19,13 +19,13 @@ sudo cp liveView.sh /etc/gphoto2/liveview.sh
 
 # Aktivieren der Services für den Autostart
 sudo systemctl enable motion.service
-sudo systemctl enable bewegung.service
+sudo systemctl enable matrix.service
 # sudo systemctl enable liveview.service
 #Restart des Daemons
 sudo systemctl daemon-reload
 # Starten der Services
 sudo systemctl start motion.service
-sudo systemctl start bewegung.service
+sudo systemctl start matrix.service
 #sudo systemctl start liveview.service
 
 
