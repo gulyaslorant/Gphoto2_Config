@@ -224,7 +224,7 @@ class ButtonMatrix():
                 if service_active:
                 # Start liveview.service again
                     subprocess.run(["sudo", "systemctl", "start", "liveview.service"])
-# Knopf 15 --------------------------------------------------------------
+# Knopf 16 --------------------------------------------------------------
             if btnIndex == 16:
             # Check if liveview.service is active
                 result = subprocess.run(["sudo", "systemctl", "is-active", "--quiet", "liveview.service"])
