@@ -1,13 +1,16 @@
 [Unit]
 Description=Capture Movie Stream and Play with MPlayer
 After=multi-user.target
+Requires=multi-user.target
 
 [Service]
 Type=simple
+ExecStartPre=/bin/sh -c 'while [ ! -e /dev/vchiq ]; do sleep 1; done'
+ExecStartPre=/bin/sh -c 'until gphoto2 --capture-image-and-download; do echo "Waiting for gphoto2 to succeed..."; sleep 10; done'
 ExecStart=/bin/sh -c 'gphoto2 --capture-movie --stdout | mplayer -'
 ExecReload=/bin/sh -c 'gphoto2 --capture-movie --stdout | mplayer -'
 Restart=on-failure
-RestartSec=10s
+RestartSec=2s
 
 [Install]
 WantedBy=multi-user.target

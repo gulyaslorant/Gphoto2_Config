@@ -31,15 +31,58 @@ class ButtonMatrix():
     def activateButton(self, rowPin, colPin):
         # Erhalte die Button Nummer
         btnIndex = self.buttonIDs[rowPin][colPin]
+# --------------------------------------------------------------
+# --------------------------------------------------------------
+# Knopf 1 ---------------------------------------------------
         if btnIndex == 1:
+            # Check if liveview.service is active
+            result = subprocess.run(["sudo", "systemctl", "is-active", "--quiet", "liveview.service"])
+            service_active = (result.returncode == 0)
+            if service_active:
+                # Stop liveview.service if it is running
+                subprocess.run(["sudo", "systemctl", "stop", "liveview.service"])
+            # Run the gphoto2 command
             subprocess.run(["gphoto2", "--list-cameras"])
+            # Service Erneut starten, falls er vorher gelaufen ist.
+            if service_active:
+                # Start liveview.service again
+                subprocess.run(["sudo", "systemctl", "start", "liveview.service"])
+ # Knopf 2 ----------------------------------------------
         if btnIndex == 2:
+            # Check if liveview.service is active
+            result = subprocess.run(["sudo", "systemctl", "is-active", "--quiet", "liveview.service"])
+            service_active = (result.returncode == 0)
+
+            if service_active:
+            # Stop liveview.service if it is running
+                subprocess.run(["sudo", "systemctl", "stop", "liveview.service"])
+            # Run the gphoto2 command
             subprocess.run(["gphoto2", "--auto-detect"])
+            # Service erneut starten, falls es vorher gelaufen ist.
+            if service_active:
+            # Start liveview.service again
+                subprocess.run(["sudo", "systemctl", "start", "liveview.service"])
+# Knopf 3 --------------------------------------------------
         if btnIndex == 3:
             if os.system('systemctl is-active --quiet liveview') == 0:
                 subprocess.run(["systemctl","stop", "liveview"])
             else:
                 subprocess.run(["systemctl","start", "liveview"])
+# Knopf 4 ----------------------------------------------
+        if btnIndex == 4:
+            # Check if liveview.service is active
+            result = subprocess.run(["sudo", "systemctl", "is-active", "--quiet", "liveview.service"])
+            service_active = (result.returncode == 0)
+            if service_active:
+            # Stop liveview.service if it is running
+                subprocess.run(["sudo", "systemctl", "stop", "liveview.service"])
+            # Run the gphoto2 command
+            subprocess.run(["gphoto2", "--auto-detect"])
+            # Service erneut starten, falls es vorher gelaufen ist.
+            if service_active:
+            # Start liveview.service again
+                subprocess.run(["sudo", "systemctl", "start", "liveview.service"])
+
         if btnIndex == 4:
             subprocess.run(["gphoto2", "--config-list"])
         if btnIndex == 5:
