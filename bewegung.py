@@ -14,7 +14,17 @@ try:                        # Beginn einer Schleife
     while True:
         # Der Wert 0 wurde nicht Berücksichtigt, weil keine Notwendigkeit besteht, einen Wert zu übermitteln, wenn keine Bewegung erkannt wurde.
        if(GPIO.input(motion_pin) == 1):
-             subprocess.run(["gphoto2", "--capture-image"])  # Wenn der Sensor Input = 0 ist
+           result = subprocess.run(["sudo", "systemctl", "is-active", "--quiet", "liveview.service"])
+           service_active = (result.returncode == 0)
+           if service_active:
+           # Stop liveview.service if it is running
+               subprocess.run(["sudo", "systemctl", "stop", "liveview.service"])
+           # Run the gphoto2 command
+           subprocess.run(["gphoto2", "--capture-image"])
+           # Service erneut starten, falls es vorher gelaufen ist.
+           if service_active:
+           # Start liveview.service again
+               subprocess.run(["sudo", "systemctl", "start", "liveview.service"])  # Wenn der Sensor Input = 0 ist
               # Wird der print Befehl ausgeführt
        elif(GPIO.input(motion_pin) == 2): # Wenn der Sensor Input = 1 ist
               print ("Keine Bewegung ...")# Wird der print Befehl ausgeführt
