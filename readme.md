@@ -2,9 +2,15 @@
 
 ## Folgende Dateien sind im Paket enthalten
 
+- bewegung.py
+- controls.py
 - install.sh
 - liveview.service
-- liveview.sh
+- liveView.sh
+- matrix.service
+- motion.serice
+- sup.sh
+- tasten.py
 
 ## Initialisierung aller Services
 
@@ -26,12 +32,12 @@ hierzu folgenden Befehl ausführen:
 
 ## Folgende Dateien sind auf den Joy-Pi abgestimmt
 
-- button_matrix.py
-- motion.py
+- tasten.py
+- bewegung.py
 
 Beide werden als Service gestartet, damit sie im Hintergrund direkt aufgerufen werden können. Später werden die Dateien in eine zusammengefasst, damit alle Steuerungen in einer Datei zusammengefasst werden.
 
-### Button_matrix steuert die Knöpfe der 16 Buttons, welche mit Funktionen hinterlegt sind.
+### matrix.service steuert die Knöpfe der 16 Buttons, welche mit Funktionen hinterlegt sind.
 
 ## In der Obersten Reihe sind die Grundlegenden Funktionen.
 
@@ -64,3 +70,13 @@ Beide werden als Service gestartet, damit sie im Hintergrund direkt aufgerufen w
 ### In der Motion.py Datei wird der Bewegungssensor angesteuert.
 
 Hiermit soll sicher gestellt werden, dass die Kamera auch auslöst, wenn eine Handbewegung registriert wird.
+
+### Updaten der Skripte
+
+- sup.sh
+
+Mit folgenden Befehl das passende Skript ausführbar machen
+
+`sudo chmod +x sup.sh`
+
+Danach das Skript einfach ausführen, um alle notwendigen Dateien zu kopieren und Services zu aktualisieren.
